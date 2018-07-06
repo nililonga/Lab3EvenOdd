@@ -10,46 +10,58 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            //declare an integer
+            //declare a variable
             int answer;
+            string answerN;
 
-            //have user enter a number
-            Console.WriteLine("Enter a number between 1 and 100:");
+            //have user enter name
+            Console.WriteLine("Hello, please enter your name:");
+            answerN = Console.ReadLine();
+
+            //have user enter number 
+            Console.WriteLine($"Thanks {answerN}! Now enter a number between 1 and 100:");
             answer = int.Parse(Console.ReadLine());
 
-            //determine even numbers between the range of 2 to 25
-            if  (answer <= 25 && answer > 2 & answer % 2 == 0)
+            //validate that number is between 1 and 100
+            while (answer < 1 || answer > 100)
             {
-                Console.WriteLine(answer + " is an even number and less than 25");
+                Console.WriteLine("That was not a valid number, please try again.");
+                answer = int.Parse(Console.ReadLine());
+            }
+                //determine even numbers between the range of 2 to 25
+                if (answer <= 25 && answer > 2 && answer % 2 == 0)
+                {
+                    Console.WriteLine($"Okay {answerN}, {answer} +  is an even number and less than 25");
+
+                    //determine even numbers between the range of 26 to 60
+                }
+                else if (answer >= 26 && answer <= 60 && answer % 2 == 0)
+
+                {
+                    Console.WriteLine(" Even");
+                }
+                //determine even numbers greater than 60
+                else if (answer > 60 & answer % 2 == 0)
+                {
+                    Console.WriteLine($"Okay {answerN}, {answer} + is Even");
+                }
+                //determine odd numbers greater than 60
+                else if (answer % 2 == 0 & answer > 60)
+                {
+                    Console.WriteLine($"Okay {answerN}, {answer} +  is odd");
+                }
+
+                else
+                {
+                    Console.WriteLine($"Okay {answerN}, {answer} + is Odd");
+                }
+
+                Console.WriteLine("Press any key to close the program...");
+                Console.ReadKey(true);
+
+
+
             
-            //determine even numbers between the range of 26 to 60
-            } else if (answer >= 26 && answer <= 60 & answer % 2 == 0) 
-            
-            {
-                Console.WriteLine(" Even");
-            }
-            //determine even numbers greater than 60
-            else if (answer > 60 & answer % 2 == 0)
-            {
-                Console.WriteLine(answer + " is Even");
-            }
-            //determine odd numbers greater than 60
-            else if (answer % 2 == 0 & answer > 60)
-            {
-                Console.WriteLine(answer + " is odd");
-            }
-
-            else
-            {
-                Console.WriteLine(answer + " is Odd");
-            }
-
-            Console.WriteLine("Press any key to close the program...");
-            Console.ReadKey(true);
-
-
-
-
         }
     }
 }
